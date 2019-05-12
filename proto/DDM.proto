@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package DDM;
+
+service DDM {
+    rpc getDDMInfo (StreamListRequest) returns (StreamListReply) {}
+}
+
+message StreamListRequest {
+}
+
+message StreamListReply {
+    message Protocol {
+            bool MAM = 1;
+            bool GRPC = 2;
+            bool HTTP = 3;
+            bool MQTT = 4;
+            bool IPFS = 5;
+    }
+    message PaymentMethods {
+        message FlashChannel {
+            message PartialDigests {
+                string digest = 1;
+                uint64 index = 2;
+            }
+            uint64 security = 1;
+            uint64 tree_depth = 2;
+            uint64 balance = 3;
+            repeated PartialDigests partial_digests = 4;
+        }
+        FlashChannel flashChannel = 1;
+        string standard = 2;
+    }
+    message Device {
+        int32 id = 0;
+        string name = 1;
+        string description = 2;
+        string IAC = 3;
+        string txId = 4;
+        uint64 price = 5;
+        float deviceFrequency = 8;//kHz
+        string structure = 6;
+        uint64 sensors = 7;
+    }
+    string name = 1;
+    Protocol protocols = 2;
+    repeated Device devices = 3;
+    PaymentMethods paymentMethod = 4;
+    string uuid = 5;
+}

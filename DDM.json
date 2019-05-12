@@ -1,0 +1,38 @@
+{
+    "name": "My Sensors Company",
+    "protocols": {
+        "MAM": true,
+        "GRPC": false,
+        "HTTP": false,
+        "MQTT": false,
+        "IPFS": false
+    },
+    "paymentMethod": {
+        "flashChannel": {
+            "security": 2,
+            "partial_digests": [{
+                "digest": "DIGEST",
+                "index": 0
+            }],
+            "tree_depth": 3,
+            "balance": 2000
+        },
+        "standard": "IWDIMQIWDQWUROIQWJDSAKMCDSOVJSDGJAGJKFHWPIUGHWEGFNEFBJKLHSIUGRIGNELVNRKDJFHSWOAJDSASIDJASK"
+    },
+    "devices": [{
+            "name": "XDK",
+            "description": "Temperature sensor",
+            "IAC": "RR000000+",
+            "category": "",
+            "txId": "DJLQWLWQMJWOIDJQXIDJIWQJKDXWQDJQCIMDJUIQWXMQWENMQWEMNQWEASDASDASDASDASDASDADAQ9999",
+            "price": 100,
+            "deviceFrequency": 1,
+            "structure": "{\"time\": 1547375269202,\"data\": {\"temp\": \"15\",\"hum\": \"20\",\"press\": \"10\"}}",
+            "sensors": 1
+    }],
+    "subscriptions": [{
+        "type":"MAMxFlashChannel",
+        "channelRoot":"ALETSSEY9BVYSIE9BRHNXDYXYDTO9ZEORQDQVPOFQKPWGLOIY9TRIKWDXBCVCUZIIQTHQCFJJCVKZXBWK",
+        "DDM_Streamer":""
+    }]
+}
